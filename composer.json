@@ -1,0 +1,34 @@
+{
+    "name": "feed-master/feed-master",
+    "description": "Um plugin para raspar feeds de sites, criar posts automaticamente e muito mais!",
+    "type": "wordpress-plugin",
+    "authors": [
+        {
+            "name": "Feed Master Inc.",
+            "homepage": "https://www.feedmaster.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "gpt3-php-wrapper/gpt3-php-wrapper": "^1.0",
+        "simplepie/simplepie": "^1.5",
+        "sunra/php-simple-html-dom-parser": "^1.5",
+        "voku/html-dom-parser": "^5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "feed_master\\": "includes/",
+            "OpenAI\\": "vendor/gpt3-php-wrapper/src/",
+            "Sunra\\PhpSimple\\HtmlDomParser\\": "vendor/sunra/php-simple-html-dom-parser/"
+        },
+        "psr-0": {
+            "voku\\helper\\": "vendor/voku/helper/src/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "php-http/discovery": true
+        }
+    }
+}
